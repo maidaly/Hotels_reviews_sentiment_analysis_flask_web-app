@@ -1,0 +1,45 @@
+<html>
+
+<link rel="stylesheet" href="../static/css/waiting_style.css">
+  <body>
+      <div id="div_1">
+      <p style="padding-top: 35; padding-left: 10;">Analysing data .....</p>
+      <center>
+    <div class="div_animated" id="div_1"></div>
+    <div class="div_animated"></div>
+    <div class="div_animated"></div>
+    <div class="div_animated"></div>
+    <div class="div_animated"></div>
+    <div class="div_animated"></div>
+</center>
+</div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
+    <p>The data analysed Succssfully..</p>
+  </div>
+
+<script>
+ var request = new XMLHttpRequest();
+ request.open('POST', '/tone-analysis');
+ 
+request.onload = function() {
+  if (request.status === 200 && request.responseText === 'done') {
+    // long process finished successfully, redirect user
+    document.getElementById("div_1").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+    // window.location = '/';
+  } else {
+    // ops, we got an error from the server
+    alert('Something went wrong.');
+    document.getElementById("div_1").style.display = "none";
+  }
+};
+
+request.onerror = function() {
+  // ops, we got an error trying to talk to the server
+  alert('Something went wrong.');
+};
+
+request.send();
+    </script>
+  </body>
+</html>

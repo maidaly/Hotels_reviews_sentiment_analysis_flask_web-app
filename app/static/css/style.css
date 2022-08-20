@@ -1,0 +1,87 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  } 
+  
+  .bg {
+    /* The image used */
+    background-image: url("../images/Sentiment-Analysis-scaled.jpg");
+  
+    /* Full height */
+    height: 100%; 
+    margin: 0;
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size:50%;
+  }
+
+
+.main_h1 {
+    background:rgba(7, 155, 76 , 0.8);
+    color:white;
+    padding:1em 0;
+    text-align:center;
+    overflow:hidden;
+    margin-right: 10;
+    margin-left: 10;
+    font-size: xx-large;
+    font-family: Cambria;
+  }
+
+  .wrapper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  a{
+    display: block;
+    width: 300px;
+    height: 50px;
+    line-height: 40px;
+    font-size: 18px;
+    margin-right: 10;
+    margin-left: 10;
+    font-family: Cambria;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid rgba(7, 155, 76);
+    background: rgba(7, 155, 76, 0.8);
+    font-weight: bold;
+    font-size: x-large;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #fff;
+    transition: all .5s;
+  }
+  
+  a:hover{
+    color: rgba(7, 155, 76);
+  }
+  
+  a:hover:after{
+    width: 100%;
+  }
+
+
+
+
+ 
